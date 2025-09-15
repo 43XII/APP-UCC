@@ -25,6 +25,7 @@ if (isset($_POST["user_01"])) {
   $user_01 = $_POST["user_01"];
   $user_02 = $_POST["user_02"];
   if ($user_01 != "" || $user_02 != "") {
+    
 
     //if($session_is_registered("user_01")){}
 

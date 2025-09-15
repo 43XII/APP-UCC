@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Itim&family=Odor+Mean+Chey&family=Prompt:ital@0;1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    text-shadow: #000 0px 0px 0.5px;
+    
+}
+
+
+.hov-primary {
+    transition: all 0.1s ease-in-out;
+}
+
+.hov-primary:hover {
+    background-color: rgb(211, 31, 31);
+    color: white !important;
+    cursor: pointer;
+    padding: 7px;
+    /* color: var(--bs-btn-bg); */
+}
+
+.bg-gray-100 {
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 8px;
+}
+
+.Topic {
+    padding-left: 2rem;
+    color: #c02f07;
+    font-weight: 800;
+    /* border: 3px solid red;
+    border-radius: 1rem; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#col{
+    margin-right: 0px;
+    padding-left: 0px;
+}
+
+aside li {
+    width: 14rem;
+    list-style: none;
+    text-decoration: none;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    /* margin-bottom: 0.5rem; */
+    /* margin-left: -10px; */
+}
+
+.full-height-overflow1 {
+    height: 80vh;
+    /* width: 40vh; */
+    overflow-x: hidden;
+}  
+.App {
+    background-color:rgba(0, 0, 0, 0);
+    /* padding: 10px; */
+    padding-left: 3rem;
+    margin-bottom: 5px;
+    color: aliceblue;
+    font-weight: bold;
+    font-family: 'Alkatra', sans-serif;
+    /* border-radius: 5px; */
+}
+
+.login {
+    display: grid;
+    grid-template-columns: 700px auto;
+    width: 100%;
+    padding: 0.2rem;
+    margin-bottom:1px;
+    background-color: rgba(0, 0, 0, 0.0);
+    margin-right:20px;
+    /* border: 1px solid blue; */
+}
+#login{
+    display: flex;
+    width:100%;
+}
+
+input:hover {
+    background-color: #db7f65e8;
+    cursor: pointer;
+}
+
+.btn_login {
+    /* width: 10px; */
+    margin-top: 10px;
+}
+
+img{
+    width: 24rem;
+    height: 17rem;
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    /* width: 100px; */
+    /* border:1px solid #000; */
+}
+.head{
+    display: flex;
+    justify-content: center;
+}
+
+/* .full-height-overflow img:hover{
+    cursor: pointer;
+    padding: 3px;
+} */
+.office:hover{
+    cursor: pointer;
+    padding: 3px;
+}
+/* .container {
+    
+    /* ?????????? Alkatra ????????????????????????????????? sans-serif ??? */
+    /* } */ 
+#tobe{
+    width: 450px;
+    height: 40px;
+    margin-left: 15rem;
+    margin-top: 0.5rem;
+    filter: drop-shadow(0px 0px 0.2px #222);
+}
+
+.yess{
+    display: flex;
+    justify-content: end;
+    margin-left: 5px;
+}
+.yes{
+    /* -webkit-filter: drop-shadow(20px 20px 20px #fdfbfb ); */
+    /* position: absolute; */
+    filter: drop-shadow(1px 1px 1.2px #ffffff);
+    width:160px; 
+    height:35px;
+    z-index:999999;
+    margin-top: 17px;
+    /* display: flex; */
+    /* /* justify-content: right; */
+    /* border: 1px solid black; */
+    /* margin-left: 1340px;  */
+
+}
+.logoapp{
+  filter: drop-shadow(1px 1px 1.2px #ffffff);
+  width:240px; 
+  height:90px;
+  z-index:999999;
+  margin-top:5px;
+}
+/* พื้นหลังหลัก */
+.background-body {
+    background-image: url('./bg/bg21.jpg'); 
+    /* URL ของภาพพื้นหลัง */
+    background-size: cover; 
+    /* ปรับขนาดภาพให้พอดีกับหน้าจอ */
+    background-repeat: no-repeat; 
+    /* ป้องกันการทำซ้ำของภาพ */
+    background-position: center; 
+    /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
+    position: relative; 
+    /* เพื่อให้ลูกของมันใช้ position: absolute */
+  }
+  
+  /* เลเยอร์เบลอ */
+  .blur-overlay {
+    backdrop-filter: blur(0.5px);
+    background-color: rgba(255, 255, 255, 0.01); 
+    width: 100%; /* ครอบคลุมพื้นที่ทั้งหมด */
+    height: 100%; /* ครอบคลุมพื้นที่ทั้งหมด */
+    position: absolute; /* ซ้อนทับบนพื้นหลัง */
+    top: 0;
+    left: 0;
+    z-index: -1; /* ให้อยู่เหนือพื้นหลัง */
+  }
+  
+.body-menu {
+    display: none;
+     /* ซ่อนเมนูเริ่มต้น */
+    background-color:rgba(0, 0, 0, 0.7); 
+    margin-left: 3px;
+  }
+  
+  .card-menubar.open .body-menu {
+    display: block; /* แสดงเมนูเมื่อคลาส 'open' ถูกเพิ่ม */
+  }
+  
+  /* .container {
+    padding: 26px;
+  } */
+  
+  .card-menubar {
+    width: 230px;
+    height: auto;
+    /* background-color: #1E2B32; */
+    border-radius: 10px 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .card-menubar.open {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-menu {
+    display: flex;
+    justify-content: space-between; /* จัดให้องค์ประกอบชิดซ้ายและขวา */
+    align-items: center; /* จัดให้องค์ประกอบอยู่กึ่งกลางในแนวตั้ง */
+    padding: 10px;
+    background-color: #ddf3e9;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    margin-left: 3px;
+  }
+  
+  .header-menu .iconM {
+    margin-right: auto; /* ดันไอคอนไปทางซ้าย */
+    font-size: 16px;
+    color: #000000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  h3 {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size:18px;
+    flex-grow: 1; 
+  }
+  
+  .iconM {
+    font-size: 16px;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-menubar.open .iconM {
+    transform: rotate(180deg);
+  }
+  
+  .body-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .body-menu li {
+    transition: 0.3s all;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    color: #ffffff;
+    display: block;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+  }
+  li:hover {
+    color: #ffffff;
+    background-color: rgb(119, 1, 1);
+    cursor: pointer;
+  }
+
+  li:hover .submenu-header {
+    color:#ffffff;
+  }
+  
+  .body-menu li ul {
+    background: #ffffff;
+    margin-left: 5px;
+    margin-top: 5px;
+    display: none;
+    position: relative;
+    border-radius: 10px;
+    width: 200px;
+  }
+  
+  .body-menu li:hover > ul {
+    display: none;
+  }
+  /* ซ่อนเมนูย่อยเริ่มต้น */
+  .submenu{
+    background-color: #c8c8c8;
+    margin-left: 3px;
+  }
+  .submenu-body {
+    display: none;
+    padding-left: 10px;
+    transition: all 0.3s ease-in-out;
+    width: 20px;
+  }
+  
+  .submenu li {
+    font-size: 14px;
+    width: 200px;
+  }
+  .container-menu{
+    margin-left: 0px;
+  }
+  /* แสดงเมนูย่อยเมื่อคลาส 'open' ถูกเพิ่ม */
+  .submenu.open .submenu-body {
+    display: block;
+  }
+
+  .header-menu, .submenu-header {
+    cursor: pointer; /* เพิ่ม cursor แบบ pointer */
+  }
+  
+  /* สไตล์สำหรับ header เมนูย่อย */
+  .submenu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color:#000000;
+  }
+  .submenu-header:hover{
+    color:#ffffff;
+  }
+  
+  .iconSub {
+    font-size: 14px;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* หมุนไอคอนเมื่อเมนูย่อยถูกเปิด */
+  .submenu.open .iconSub {
+    transform: rotate(180deg);
+  }
+
+  

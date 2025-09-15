@@ -355,6 +355,7 @@ if (isset($_POST["user_01"])) {
     home.style.display = "none";
     frame.style.display = "block";
   }
+  test
 
 </script>
 
