@@ -20,75 +20,75 @@
   <link rel="stylesheet" href="./font-awesome/fontawesome.min.css">
 </head>
 <?php
-session_start();
-if (isset($_POST["user_01"])) {
-  $user_01 = $_POST["user_01"];
-  $user_02 = $_POST["user_02"];
-  if ($user_01 != "" || $user_02 != "") {
+// session_start();
+// if (isset($_POST["user_01"])) {
+//   $user_01 = $_POST["user_01"];
+//   $user_02 = $_POST["user_02"];
+//   if ($user_01 != "" || $user_02 != "") {
 
 
-    //if($session_is_registered("user_01")){}
+//     //if($session_is_registered("user_01")){}
 
-    $username = 'UCC\\' . $user_01;
-    $password = $user_02;
-    $ds = ldap_connect("192.168.81.6");
-    if ($ds) {
-      ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
-      ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
-      $r = ldap_bind($ds, $username, $password) or dir("Unable to connect to LDAP server");
+//     $username = 'UCC\\' . $user_01;
+//     $password = $user_02;
+//     $ds = ldap_connect("192.168.81.6");
+//     if ($ds) {
+//       ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+//       ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
+//       $r = ldap_bind($ds, $username, $password) or dir("Unable to connect to LDAP server");
 
-      $sr = ldap_search($ds, "DC=ucc,DC=co,DC=th", "CN=$user_01");
-      $info = ldap_get_entries($ds, $sr);
+//       $sr = ldap_search($ds, "DC=ucc,DC=co,DC=th", "CN=$user_01");
+//       $info = ldap_get_entries($ds, $sr);
 
-      if ($info["count"] <> "") {
-        $entry = ldap_first_entry($ds, $sr);
-        $attrs = ldap_get_attributes($ds, $entry);
-        for ($i = 0; $i < $info["count"]; $i++) {
-          if ($info[$i]["mail"][0] != "" && $info[$i]["description"][0] != "CCH") {
-            $user_profile = array(
-              $info[$i]["initials"][0],
-              $info[$i]["givenname"][0],
-              $info[$i]["sn"][0],
-              $info[$i]["mail"][0],
-              $info[$i]["telephonenumber"][0],
-              $info[$i]["mobile"][0],
-              $info[$i]["physicaldeliveryofficename"][0],
-              $info[$i]["description"][0],
-              $info[$i]["wwwhomepage"][0]
-            );
-            for ($z = 0; $z < count($info[$i]["memberof"]) - 1; $z++) {
-              $mem[$z] = split(",", $info[$i]["memberof"][$z]);
-              $memof[$z] = split("=", $mem[$z][0]);
-              $memberof[$z] = $memof[$z][1];
-            }
-          }
-        }
-        $login_ldap = "OK";
-        $_SESSION['login_ldap'] = "OK";
-        $_SESSION['namelog'] = "$user_profile[0] $user_profile[1] $user_profile[2]";
-        /*#############################################################################
+//       if ($info["count"] <> "") {
+//         $entry = ldap_first_entry($ds, $sr);
+//         $attrs = ldap_get_attributes($ds, $entry);
+//         for ($i = 0; $i < $info["count"]; $i++) {
+//           if ($info[$i]["mail"][0] != "" && $info[$i]["description"][0] != "CCH") {
+//             $user_profile = array(
+//               $info[$i]["initials"][0],
+//               $info[$i]["givenname"][0],
+//               $info[$i]["sn"][0],
+//               $info[$i]["mail"][0],
+//               $info[$i]["telephonenumber"][0],
+//               $info[$i]["mobile"][0],
+//               $info[$i]["physicaldeliveryofficename"][0],
+//               $info[$i]["description"][0],
+//               $info[$i]["wwwhomepage"][0]
+//             );
+//             for ($z = 0; $z < count($info[$i]["memberof"]) - 1; $z++) {
+//               $mem[$z] = split(",", $info[$i]["memberof"][$z]);
+//               $memof[$z] = split("=", $mem[$z][0]);
+//               $memberof[$z] = $memof[$z][1];
+//             }
+//           }
+//         }
+//         $login_ldap = "OK";
+//         $_SESSION['login_ldap'] = "OK";
+//         $_SESSION['namelog'] = "$user_profile[0] $user_profile[1] $user_profile[2]";
+//         /*#############################################################################
 
-                    SESSION
+//                     SESSION
 
-        ###############################################################################*/
+//         ###############################################################################*/
 
 
-        session_register("user_01");
-        session_register("user_02");
-        session_register("userprofile");
-        session_register("memberof");
-        session_register("memo_code");
-      } else {
-        header("location:index.php");
-      }
-      ldap_close($ds);
-    } else {
-      header("location:index.php");
-    }
-  } else {
-    header("location:index.php");
-  }
-}
+//         session_register("user_01");
+//         session_register("user_02");
+//         session_register("userprofile");
+//         session_register("memberof");
+//         session_register("memo_code");
+//       } else {
+//         header("location:index.php");
+//       }
+//       ldap_close($ds);
+//     } else {
+//       header("location:index.php");
+//     }
+//   } else {
+//     header("location:index.php");
+//   }
+// }
 
 ?>
 
@@ -165,7 +165,7 @@ if (isset($_POST["user_01"])) {
       <div class="container-menu">
         <div class="card-menubar">
           <div class="header-menu">
-            <h3>Information</h3>
+            <h3>INFORMMATION</h3>
             <i class="fas fa-angle-down iconM"></i>
           </div>
           <div class="body-menu">
@@ -515,39 +515,39 @@ if (isset($_POST["user_01"])) {
 
 </html>
 <?php
-include("config.send.php");
-$sql = "select * from servers order by ser_00 desc";
-$result = mysql_db_query($dbname, $sql) or die("Can't connect to table in database $dbname");
-$d = 0;
-while ($row = mysql_fetch_array($result)) {
-  //echo "$row[0]<br>";
-  //??????????????????????
-  $expire_explode = explode("/", $row[12]);
-  $expire_day[$d] = $expire_explode[0];
-  $expire_month[$d] = $expire_explode[1];
-  $expire_year[$d] = $expire_explode[2];
+// include("config.send.php");
+// $sql = "select * from servers order by ser_00 desc";
+// $result = mysql_db_query($dbname, $sql) or die("Can't connect to table in database $dbname");
+// $d = 0;
+// while ($row = mysql_fetch_array($result)) {
+//   //echo "$row[0]<br>";
+//   //??????????????????????
+//   $expire_explode = explode("/", $row[12]);
+//   $expire_day[$d] = $expire_explode[0];
+//   $expire_month[$d] = $expire_explode[1];
+//   $expire_year[$d] = $expire_explode[2];
 
-  //??????????????????
-  $send_explode = explode("/", $row[15]);
-  $send_1[$d] = $send_explode[0];
-  $send_2[$d] = $send_explode[1];
-  $send_3[$d] = $send_explode[2];
+//   //??????????????????
+//   $send_explode = explode("/", $row[15]);
+//   $send_1[$d] = $send_explode[0];
+//   $send_2[$d] = $send_explode[1];
+//   $send_3[$d] = $send_explode[2];
 
-  //???????????????
-  $today_explode = explode("/", $Mday);
-  $today_day[$d] = $today_explode[0];
-  $today_month[$d] = $today_explode[1];
-  $today_year[$d] = $today_explode[2];
+//   //???????????????
+//   $today_explode = explode("/", $Mday);
+//   $today_day[$d] = $today_explode[0];
+//   $today_month[$d] = $today_explode[1];
+//   $today_year[$d] = $today_explode[2];
 
-  $End[$d] = mktime(0, 0, 0, $expire_month[$d], $expire_day[$d], $expire_year[$d]);
-  $Start[$d] = mktime(0, 0, 0, $today_month[$d], $today_day[$d], $today_year[$d]);
+//   $End[$d] = mktime(0, 0, 0, $expire_month[$d], $expire_day[$d], $expire_year[$d]);
+//   $Start[$d] = mktime(0, 0, 0, $today_month[$d], $today_day[$d], $today_year[$d]);
 
-  $DateNum[$d] = ceil(($End[$d] - $Start[$d]) / 86400); // 28
-  if ($DateNum[$d] == 60 || $DateNum[$d] == 30 || ($DateNum[$d] <= 5 && $DateNum[$d] >= 0)) {
-    if ($send_1[$d] <> $dd || $row[15] == "") {
-      include("send_server.php");
-    }
-  }
-  $d++;
-}
+//   $DateNum[$d] = ceil(($End[$d] - $Start[$d]) / 86400); // 28
+//   if ($DateNum[$d] == 60 || $DateNum[$d] == 30 || ($DateNum[$d] <= 5 && $DateNum[$d] >= 0)) {
+//     if ($send_1[$d] <> $dd || $row[15] == "") {
+//       include("send_server.php");
+//     }
+//   }
+//   $d++;
+// }
 ?>

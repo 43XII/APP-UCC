@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2025 at 06:12 PM
+-- Generation Time: Sep 19, 2025 at 11:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,6 +37,14 @@ CREATE TABLE `menu_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Dumping data for table `menu_table`
+--
+
+INSERT INTO `menu_table` (`No`, `Group_Menu`, `Name_Menu`, `Type_Action`, `ICON_Menu`, `Link_Menu`) VALUES
+(1, 'COMPUTER', 'New Requirement Form(Epicor)', 'OPEN_IN', 'far fa-building fa-lg', 'http://app.ucc.co.th/eforms/New_Requirement_Form_R07.pdf'),
+(2, 'COMPUTER', 'Stock Computer', 'LINK_TO', 'fas fa-archive fa-lg', 'http://app.ucc.co.th/Spare/');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -54,7 +62,7 @@ ALTER TABLE `menu_table`
 -- AUTO_INCREMENT for table `menu_table`
 --
 ALTER TABLE `menu_table`
-  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

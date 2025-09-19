@@ -154,14 +154,14 @@ img{
 }
 .logoapp{
   filter: drop-shadow(1px 1px 1.2px #ffffff);
-  width:240px; 
-  height:90px;
+  width:180px; 
+  height:60px;
   z-index:999999;
   margin-top:5px;
 }
 /* พื้นหลังหลัก */
 .background-body {
-    background-image: url('./bg/bg21.jpg'); 
+    background-image: url('./bg/bg20.jpg'); 
     /* URL ของภาพพื้นหลัง */
     background-size: cover; 
     /* ปรับขนาดภาพให้พอดีกับหน้าจอ */
