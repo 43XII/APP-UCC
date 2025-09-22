@@ -1,0 +1,6 @@
+INSERT INTO `menu_table` (`Group_Menu`,`Group_NO`,`Menu_NO`, `Name_Menu`, `Type_Action`, `ICON_Menu`, `Link_Menu`) VALUES
+('INFORMMATION',1,1 ,'Web Site UCC', 'LINK_TO', 'fas fa-mail-bulk fa-lg', 'http://app.ucc.co.th/eforms/New_Requirement_Form_R07.pdf'),
+('INFORMMATION',1,2 ,'Group Mail', 'OPEN_IN', 'fas fa-mail-bulk fa-lg', 'http://app.ucc.co.th/memo_online'),
+('INFORMMATION',1,3 ,'Map', 'OPEN_IN', 'far fa-map fa-lg', 'http://app.ucc.co.th/map'),
+('INFORMMATION',1,4 ,'News Management', 'LINK_TO', 'fas fa-newspaper', 'https://www.ucc.co.th/news_admin_mgmt/login.php'),
+('INFORMMATION',1,5 ,'Opening Management', 'LINK_TO', 'fas fa-address-card', 'https://www.ucc.co.th/news_admin_opening/login.php');
