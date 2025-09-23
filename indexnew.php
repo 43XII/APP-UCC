@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="./font-awesome/fontawesome.min.css">
 </head>
 <?php
-// session_start();
+session_start();
+//-------------------------------------------------
+
 // if (isset($_POST["user_01"])) {
 //   $user_01 = $_POST["user_01"];
 //   $user_02 = $_POST["user_02"];
@@ -162,258 +164,7 @@
 
   <section class="row " id="col" style="width:100%">
     <aside class="col-3 col-xl-2 bg-pr full-height-overflow1" id="aside">
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>INFORMMATION</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="index.php">
-                <li class="hov-primary"><i class="fas fa-home fa-ls "></i> Home</li>
-              </a>
-              <a href="https://ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="fas fa-truck-moving fa-lg"></i> Web Site UCC</li>
-              </a>
-              <a href="http://app.ucc.co.th/test" target="contents">
-                <li class="hov-primary"><i class="fas fa-truck-moving fa-lg"></i> Group Mail</li>
-              </a>
-              <a href="http://app.ucc.co.th/map" target="contents">
-                <li class="hov-primary"><i class="far fa-map fa-lg"></i> Map</li>
-              </a>
-              <a href="https://www.ucc.co.th/news_admin_mgmt/login.php" target="_blank">
-                <li class="hov-primary"><i class="fas fa-truck-moving fa-lg"></i> News Management</li>
-              </a>
-              <a href="https://www.ucc.co.th/news_admin_opening/login.php" target="_blank">
-                <li class="hov-primary"><i class="fas fa-truck-moving fa-lg"></i> Opening Management</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>ACCOUNT</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://mobileapp.ucc.co.th:22443/sales_invoice/">
-                <li class="hov-primary"><i class="fas fa-home fa-ls "></i> Invoive Send & Receipt</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>COMPUTER</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="http://app.ucc.co.th/eforms/New_Requirement_Form_R07.pdf" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="far fa-folder-open fa-lg"></i> New Requirement
-                  Form(Epicor)</li>
-              </a>
-              <a href="http://app.ucc.co.th/memo_online" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="fas fa-folder-open fa-lg"></i> ERP Memo Online
-                </li>
-              </a>
-              <a href="http://app.ucc.co.th/new_com" target="contents">
-                <li class="hov-primary" style="font-size:14px;"><i class="far fa-file-archive fa-lg"></i> Computer
-                  Service</li>
-              </a>
-              <a href="http://app.ucc.co.th/Spare/" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="fas fa-file-archive fa-lg"></i> Stock Computer
-                </li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/p-cha/" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="far fa-folder-open fa-lg"></i> New
-                  REQ(K'Saksit)</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/p-cha-admin/" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="fas fa-folder-open fa-lg"></i> Report
-                  REQ(ADMIN)</li>
-              </a>
-              <a href="http://app.ucc.co.th/Log_maildown/" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="far fa-file-archive fa-lg"></i> Log Mail
-                  System Down</li>
-              </a>
-              <a href="http://app.ucc.co.th/chk_stock" target="_blank">
-                <li class="hov-primary" style="font-size:14px;"><i class="fas fa-file-archive fa-lg"></i> Check Stock
-                </li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>GENERAL AFFAIRS</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://booking-room.ucc.co.th/index.php" target="contents">
-                <li class="hov-primary"><i class="fas fa-cube fa-lg"></i> Meeting Room Booking</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/ucc_car/index.php" target="_blank">
-                <li class="hov-primary"><i class="fas fa-tools fa-lg"></i> Car Booking Online</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/requisitionpj/" target="_blank">
-                <li class="hov-primary"><i class="fas fa-city fa-lg"></i> Requisition Take Out FAC(TOF)</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/welcome-board-user/" target="_blank">
-                <li class="hov-primary"><i class="fas fa-inbox fa-lg"></i>Welcome Board </li>
-              </a>
-              <a href="http://app.ucc.co.th/TQA_Center/menu_ga.php" target="_blank">
-                <li class="hov-primary"><i class="fas fa-industry fa-lg"></i> Document ISO14001:2005</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>HUMAN RESOURCES</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://mobileapp.ucc.co.th:22443/interpreter/" target="contents">
-                <li class="hov-primary"><i class="fas fa-sd-card fa-ls"></i> Interprer System</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/requisition_form/" target="_blank">
-                <li class="hov-primary"><i class="fas fa-memory fa-ls"></i> HR APP Form</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>IMPORT & EXPORT</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://u3millsheet.ucc.co.th/IMEXDoc/" target="contents">
-                <li class="hov-primary"><i class="fas fa-desktop fa-ls"></i> IMEX Document Online</li>
-              </a>
-              <a href="https://u3millsheet.ucc.co.th/TISI_DOC/" target="_blank">
-                <li class="hov-primary"><i class="fas fa-archive fa-ls"></i> TISI eDocument Online</li>
-              </a>
-              <!-- <li class="submenu">
-                <div class="submenu-header">
-                  <i class="fa-solid fa-computer fa-lg"></i>P,Cha Program <i class="fas fa-angle-down iconSub"></i>
-                </div>
-                <ul class="submenu-body">
-                  <a href="https://booking-room.ucc.co.th/p-cha/" target="_blank">
-                    <li class="hov-primary"><i class="fas fa-file-alt fa-ls"></i> New Req (K.Saksit)</li>
-                  </a>
-                  <a href="https://booking-room.ucc.co.th/p-cha-admin/" target="_blank">
-                    <li class="hov-primary"><i class="fas fa-file-signature fa-ls"></i> Report Req (By Admin)</li>
-                  </a>
-                </ul>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>MANUFACTURING (MFG)</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="http://192.168.79.11:81/Die_MTN_control.php" target="_blank">
-                <li class="hov-primary"> <i class="fas fa-book-open fa-ls"></i> Die MTN Control</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>SALE</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://mobileapp.ucc.co.th:22443/sales_invoice/" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Invoice Send & Receipt</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>PLANNING & LOGISTIC</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://tsu2.ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Truck Scale U2</li>
-              </a>
-              <a href="https://tsu3.ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Truck Scale U3</li>
-              </a>
-              <a href="https://tsu4.ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Truck Scale U4</li>
-              </a>
-              <a href="https://booking-room.ucc.co.th/qrcode/" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> QRcode Skidlot</li>
-              </a>
-              <a href="http://app.ucc.co.th/skid_control" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Skid Control</li>
-              </a>
-              <a href="https://u3millsheet.ucc.co.th/Customer-Routing/" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Customer Routing</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container-menu">
-        <div class="card-menubar">
-          <div class="header-menu">
-            <h3>TOTAL QUALITY ASSURANCE</h3>
-            <i class="fas fa-angle-down iconM"></i>
-          </div>
-          <div class="body-menu">
-            <ul>
-              <a href="https://u2millsheet.ucc.co.th:2443" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Defect Information</li>
-              </a>
-              <a href="https://u2millsheet.ucc.co.th:2443" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> U2 Millsheet</li>
-              </a>
-              <a href="https://u3millsheet.ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> U3 Millsheet</li>
-              </a>
-              <a href="https://u4millsheet.ucc.co.th" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> U4 Millsheet</li>
-              </a>
-              <a href="https://u2millsheet.ucc.co.th:2443" target="_blank">
-                <li class="hov-primary"><i class="far fa-clone fa-ls"></i> Document Control(TQA)</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
+
     </aside>
     <main class="col-9 col-xl-10 bg-gray-100  full-height-overflow" style="overflow: hidden;">
       <div class="container" id="home">
@@ -486,34 +237,116 @@
   }
 </script>
 
-<script>
-  // เลือกการ์ดทั้งหมด
-  const cardMenus = document.querySelectorAll('.card-menubar');
-
-  cardMenus.forEach(menuCard => {
-    // จัดการเมนูหลัก
-    const headerMenu = menuCard.querySelector('.header-menu');
-    const bodyMenu = menuCard.querySelector('.body-menu');
-
-    headerMenu.addEventListener('click', () => {
-      menuCard.classList.toggle('open'); // สลับคลาส 'open' สำหรับเมนูหลัก
-    });
-
-    // จัดการเมนูย่อย
-    const submenus = menuCard.querySelectorAll('.submenu');
-    submenus.forEach(submenu => {
-      const submenuHeader = submenu.querySelector('.submenu-header');
-
-      submenuHeader.addEventListener('click', (e) => {
-        e.stopPropagation(); // ป้องกันการคลิกกระทบเมนูหลัก
-        submenu.classList.toggle('open'); // สลับคลาส 'open' สำหรับเมนูย่อย
-      });
-    });
-  });
-</script>
 
 
 </html>
+
+<script>
+  // DATA MENU API
+  document.addEventListener('DOMContentLoaded', () => {
+    const apiUrl = 'https://www.ucc.co.th/api/App_ucc/data_menu.php';
+    const token = 'UCC_WEB_APP_1989'; // token ที่ตรงกับ PHP
+
+    fetch(apiUrl, {
+        method: 'GET', // หรือ POST ถ้า API ต้องการ
+        headers: {
+          'Authorization': token,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok. Status: ' + res.status);
+        return res.json();
+      })
+      .then(data => {
+        renderMenu(data.datamenu);
+        setupMenuToggle(); // เรียก toggle หลังสร้างเมนู
+      })
+      .catch(err => {
+        console.error('❌ Fetch API error:', err);
+      });
+  });
+</script>
+<script>
+  function renderMenu(datamenu) {
+    const activeMenus = datamenu.filter(item => item.Status_menu === 'Y');
+
+    // จัดกลุ่มตาม Group_NO
+    const grouped = {};
+    activeMenus.forEach(item => {
+      if (!grouped[item.Group_NO]) {
+        grouped[item.Group_NO] = {
+          Group_Menu: item.Group_Menu,
+          items: []
+        };
+      }
+      grouped[item.Group_NO].items.push(item);
+    });
+
+    let html = '';
+
+    Object.values(grouped).forEach(group => {
+      // เรียงเมนูย่อยตาม Menu_NO
+      group.items.sort((a, b) => parseInt(a.Menu_NO) - parseInt(b.Menu_NO));
+
+      html += `
+        <div class="container-menu">
+            <div class="card-menubar">
+                <div class="header-menu">
+                    <h3>${group.Group_Menu}</h3>
+                    <i class="fas fa-angle-down iconM"></i>
+                </div>
+                <div class="body-menu">
+                    <ul>
+        `;
+
+      group.items.forEach(item => {
+        let target = '';
+        if (item.Type_Action === 'LINK_TO') target = '_blank';
+        else if (item.Type_Action === 'OPEN_IN') target = 'contents';
+
+        html += `
+                        <a href="${item.Link_Menu}" target="${target}">
+                            <li class="hov-primary">
+                                <i class="${item.ICON_Menu}"></i> ${item.Name_Menu}
+                            </li>
+                        </a>
+                    `;
+      });
+
+      html += `
+                    </ul>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+
+    document.getElementById('aside').innerHTML = html;
+  }
+
+  // --- Toggle เมนูหลัก (เปิด/ปิด) ---
+  function setupMenuToggle() {
+    const cardMenus = document.querySelectorAll('.card-menubar');
+    cardMenus.forEach(menuCard => {
+      const headerMenu = menuCard.querySelector('.header-menu');
+      headerMenu.addEventListener('click', () => {
+        menuCard.classList.toggle('open'); // สลับ class 'open'
+      });
+    });
+  }
+</script>
+
+<style>
+  /* ตัวอย่าง CSS สั้น ๆ ให้ toggle ทำงาน */
+  .card-menubar .body-menu {
+    display: none;
+  }
+
+  .card-menubar.open .body-menu {
+    display: block;
+  }
+</style>
 <?php
 // include("config.send.php");
 // $sql = "select * from servers order by ser_00 desc";

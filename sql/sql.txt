@@ -4,3 +4,30 @@ INSERT INTO `menu_table` (`Group_Menu`,`Group_NO`,`Menu_NO`, `Name_Menu`, `Type_
 ('INFORMMATION',1,3 ,'Map', 'OPEN_IN', 'far fa-map fa-lg', 'http://app.ucc.co.th/map'),
 ('INFORMMATION',1,4 ,'News Management', 'LINK_TO', 'fas fa-newspaper', 'https://www.ucc.co.th/news_admin_mgmt/login.php'),
 ('INFORMMATION',1,5 ,'Opening Management', 'LINK_TO', 'fas fa-address-card', 'https://www.ucc.co.th/news_admin_opening/login.php');
+
+
+
+INSERT INTO `menu_table` (`Group_Menu`,`Group_NO`,`Menu_NO`, `Name_Menu`, `Type_Action`, `ICON_Menu`, `Link_Menu`) VALUES
+('ACCOUNT',2,1 ,'Invoive Send & Receipt', 'LINK_TO', 'fas fa-cogs fa-lg', 'https://mobileapp.ucc.co.th:22443/sales_invoice/'),
+('GENERAL_AFFAIRS',4,1 ,'Meeting Room Booking', 'LINK_TO', 'fas fa-book-open fa-lg', 'https://booking-room.ucc.co.th/index.php'),
+('GENERAL_AFFAIRS',4,2 ,'Car Booking Online', 'LINK_TO', 'fas fa-car-alt fa-lg', 'https://booking-room.ucc.co.th/ucc_car/index.php'),
+('GENERAL_AFFAIRS',4,3 ,'Requisition Take Out FAC(TOF)', 'LINK_TO', 'fas fa-list-alt', 'https://booking-room.ucc.co.th/requisitionpj/'),
+('GENERAL_AFFAIRS',4,4 ,'Welcome Board', 'LINK_TO', 'fas fa-clipboard fa-lg', 'https://booking-room.ucc.co.th/welcome-board-user/'),
+('GENERAL_AFFAIRS',4,5 ,'Document ISO14001:2005', 'LINK_TO', 'far fa-folder-open fa-lg', 'http://app.ucc.co.th/TQA_Center/menu_ga.php'),
+('HUMAN_RESOURCES',5,1 ,'Interprer System', 'OPEN_IN', 'fas fa-cogs fa-lg', 'https://mobileapp.ucc.co.th:22443/interpreter/'),
+('HUMAN_RESOURCES',5,2 ,'HR APP Form', 'LINK_TO', 'fas fa-paste', 'https://booking-room.ucc.co.th/requisition_form/'),
+('IMPORT&EXPORT',6,1 ,'IMEX Document Online', 'OPEN_IN', 'far fa-file-archive fa-lg', 'https://u3millsheet.ucc.co.th/IMEXDoc/'),
+('IMPORT&EXPORT',6,2 ,'TISI eDocument Online', 'LINK_TO', 'fas fa-file-archive fa-lg', 'https://u3millsheet.ucc.co.th/TISI_DOC/'),
+('MANUFACTURING(MFG)',7,1 ,'Die MTN Control', 'LINK_TO', 'fas fa-book-open fa-ls', 'http://192.168.79.11:81/Die_MTN_control.php'),
+('SALE',8,1 ,'Invoice Send & Receipt', 'LINK_TO', 'far fa-clone fa-ls', 'https://mobileapp.ucc.co.th:22443/sales_invoice/'),
+('PLANNING&LOGISTIC',9,1 ,'Truck Scale U2', 'OPEN_IN', 'fas fa-truck-moving fa-lg', 'https://tsu2.ucc.co.th'),
+('PLANNING&LOGISTIC',9,2 ,'Truck Scale U3', 'OPEN_IN', 'fas fa-truck-moving fa-lg', 'https://tsu3.ucc.co.th'),
+('PLANNING&LOGISTIC',9,3 ,'Truck Scale U4', 'OPEN_IN', 'fas fa-truck-moving fa-lg', 'https://tsu4.ucc.co.th'),
+('PLANNING&LOGISTIC',9,4 ,'QRcode Skidlot', 'OPEN_IN', 'fas fa-qrcode fa-lg', 'https://booking-room.ucc.co.th/qrcode/'),
+('PLANNING&LOGISTIC',9,5 ,'Skid Control', 'LINK_TO', 'fas fa-stream fa-lgs', 'http://app.ucc.co.th/skid_control'),
+('PLANNING&LOGISTIC',9,6 ,'Customer Routing', 'OPEN_IN', 'fas fa-city fa-lg', 'https://u3millsheet.ucc.co.th/Customer-Routing/'),
+('TOTAL_QUALITY_ASSURANCE',10,1 ,'Defect Information', 'LINK_TO', 'fas fa-cogs fa-lg', 'https://mobileapp.ucc.co.th:22443/TQA/reason_Gallery.php'),
+('TOTAL_QUALITY_ASSURANCE',10,2 ,'U2 Millsheet', 'LINK_TO', 'far fa-folder-open fa-lg', 'https://u2millsheet.ucc.co.th:2443'),
+('TOTAL_QUALITY_ASSURANCE',10,3 ,'U3 Millsheet', 'LINK_TO', 'far fa-folder-open fa-lg', 'https://u3millsheet.ucc.co.th'),
+('TOTAL_QUALITY_ASSURANCE',10,4 ,'U4 Millsheet', 'LINK_TO', 'far fa-folder-open fa-lg', 'https://u4millsheet.ucc.co.th'),
+('TOTAL_QUALITY_ASSURANCE',10,4 ,'Document Control(TQA)', 'LINK_TO', 'far fa-folder-open fa-lg', 'http://app.ucc.co.th/TQA_Center/menu_center.php');
