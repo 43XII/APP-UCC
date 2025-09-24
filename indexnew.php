@@ -21,92 +21,95 @@
 </head>
 <?php
 session_start();
-//-------------------------------------------------
 
-// if (isset($_POST["user_01"])) {
-//   $user_01 = $_POST["user_01"];
-//   $user_02 = $_POST["user_02"];
-//   if ($user_01 != "" || $user_02 != "") {
-
-
-//     //if($session_is_registered("user_01")){}
-
-//     $username = 'UCC\\' . $user_01;
-//     $password = $user_02;
-//     $ds = ldap_connect("192.168.81.6");
-//     if ($ds) {
-//       ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
-//       ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
-//       $r = ldap_bind($ds, $username, $password) or dir("Unable to connect to LDAP server");
-
-//       $sr = ldap_search($ds, "DC=ucc,DC=co,DC=th", "CN=$user_01");
-//       $info = ldap_get_entries($ds, $sr);
-
-//       if ($info["count"] <> "") {
-//         $entry = ldap_first_entry($ds, $sr);
-//         $attrs = ldap_get_attributes($ds, $entry);
-//         for ($i = 0; $i < $info["count"]; $i++) {
-//           if ($info[$i]["mail"][0] != "" && $info[$i]["description"][0] != "CCH") {
-//             $user_profile = array(
-//               $info[$i]["initials"][0],
-//               $info[$i]["givenname"][0],
-//               $info[$i]["sn"][0],
-//               $info[$i]["mail"][0],
-//               $info[$i]["telephonenumber"][0],
-//               $info[$i]["mobile"][0],
-//               $info[$i]["physicaldeliveryofficename"][0],
-//               $info[$i]["description"][0],
-//               $info[$i]["wwwhomepage"][0]
-//             );
-//             for ($z = 0; $z < count($info[$i]["memberof"]) - 1; $z++) {
-//               $mem[$z] = split(",", $info[$i]["memberof"][$z]);
-//               $memof[$z] = split("=", $mem[$z][0]);
-//               $memberof[$z] = $memof[$z][1];
-//             }
-//           }
-//         }
-//         $login_ldap = "OK";
-//         $_SESSION['login_ldap'] = "OK";
-//         $_SESSION['namelog'] = "$user_profile[0] $user_profile[1] $user_profile[2]";
-//         /*#############################################################################
-
-//                     SESSION
-
-//         ###############################################################################*/
+if (isset($_POST["user_01"])) {
+  $user_01 = $_POST["user_01"];
+  $user_02 = $_POST["user_02"];
+  if ($user_01 != "" || $user_02 != "") {
 
 
-//         session_register("user_01");
-//         session_register("user_02");
-//         session_register("userprofile");
-//         session_register("memberof");
-//         session_register("memo_code");
-//       } else {
-//         header("location:index.php");
-//       }
-//       ldap_close($ds);
-//     } else {
-//       header("location:index.php");
-//     }
-//   } else {
-//     header("location:index.php");
-//   }
-// }
+    //if($session_is_registered("user_01")){}
+
+    $username = 'UCC\\' . $user_01;
+    $password = $user_02;
+    $ds = ldap_connect("192.168.81.6");
+    if ($ds) {
+      ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+      ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
+      $r = ldap_bind($ds, $username, $password) or dir("Unable to connect to LDAP server");
+
+      $sr = ldap_search($ds, "DC=ucc,DC=co,DC=th", "CN=$user_01");
+      $info = ldap_get_entries($ds, $sr);
+
+      if ($info["count"] <> "") {
+        $entry = ldap_first_entry($ds, $sr);
+        $attrs = ldap_get_attributes($ds, $entry);
+        for ($i = 0; $i < $info["count"]; $i++) {
+          if ($info[$i]["mail"][0] != "" && $info[$i]["description"][0] != "CCH") {
+            $user_profile = array(
+              $info[$i]["initials"][0],
+              $info[$i]["givenname"][0],
+              $info[$i]["sn"][0],
+              $info[$i]["mail"][0],
+              $info[$i]["telephonenumber"][0],
+              $info[$i]["mobile"][0],
+              $info[$i]["physicaldeliveryofficename"][0],
+              $info[$i]["description"][0],
+              $info[$i]["wwwhomepage"][0]
+            );
+            for ($z = 0; $z < count($info[$i]["memberof"]) - 1; $z++) {
+              $mem[$z] = split(",", $info[$i]["memberof"][$z]);
+              $memof[$z] = split("=", $mem[$z][0]);
+              $memberof[$z] = $memof[$z][1];
+            }
+          }
+        }
+        $login_ldap = "OK";
+        $_SESSION['login_ldap'] = "OK";
+        $_SESSION['namelog'] = "$user_profile[0] $user_profile[1] $user_profile[2]";
+        /*#############################################################################
+
+                    SESSION
+
+        ###############################################################################*/
+
+
+        session_register("user_01");
+        session_register("user_02");
+        session_register("userprofile");
+        session_register("memberof");
+        session_register("memo_code");
+      } else {
+        header("location:index.php");
+      }
+      ldap_close($ds);
+    } else {
+      header("location:index.php");
+    }
+  } else {
+    header("location:index.php");
+  }
+}
 
 ?>
 
 <body class='background-body'>
 
-  <div class="container-fluid App" style="display: flex; justify-content: space-between; align-items: center;">
+  <div class="container-fluid App header-bar" >
     <!-- <h1 class="mt-1" style="margin-bottom:0px;">APP.UCC.CO.TH</h1> -->
     <img class="logoapp" src="./img/ucclogo.png" alt="">
     <span>
-      <div class="login">
-        <div id="login">
-          <span class="input-group m-2 w-50">
-            <?php
-            if (!empty($_SESSION["login_ldap"])) { ?>
-              <div class="login">
-                <div id="login">
+      <?php
+      if (!empty($_SESSION["login_ldap"])) { ?>
+        <div class="logout">
+          <div id="logout">
+            <span class="input-group m-2 w-50">
+
+              <div class="logout">
+                <!-- <div class="yess">
+                  <a href="index.php"><img class="yes" src="img/YES-WE-UNITED.png" alt=""></a>
+                </div> -->
+                <div id="logout">
                   <span class="input-group m-2 w-50">
                     <span class="input-group-text" id="basic-addon1">
                       <i class="fas fa-user-circle"></i>
@@ -116,48 +119,53 @@ session_start();
                       aria-describedby="basic-addon1">
 
                   </span>
-                  <div class="btn_login">
+                  <div class="btn_logout">
                     <!-- <button type="submit" class="btn btn-secondary btn-sm">Login</button> -->
-                    <a href="logout.php" class="btn btn-secondary btn-sm">Logout</a>
+                    <a href="logout.php" class="btn btn-secondary btn-sm btn-logout">Logout</a>
                   </div>
                 </div>
-                <div class="yess">
-                  <a href="index.php"><img class="yes" src="img/YES-WE-UNITED.png" alt=""></a>
-                </div>
+
                 <!-- <div ><img src="To be world class-4.png" alt="" id="tobe"></div> -->
               </div>
-            <?php } else { ?>
-
-              <form action="" method="POST">
-                <div class="login">
-                  <div id="login">
-                    <span class="input-group m-2 ">
-                      <span class="input-group-text" id="basic-addon1">
-                        <i class="fas fa-user-circle"></i>
-                      </span>
-                      <input type="text" name="user_01" class="form-control" placeholder="User Name"
-                        aria-label="Input group example" aria-describedby="basic-addon1">
-
+            </span>
+          </div>
+        </div>
+      <?php } else { ?>
+        <div class="login">
+          <div id="login">
+            <span class="input-group m-2 w-50">
+              <div class="login">
+                <div id="login">
+                  <!-- <div class="yess">
+                      <a href="index.php"><img class="yes" src="img/YES-WE-UNITED.png" alt=""></a>
+                    </div> -->
+                  <span class="input-group m-2 ">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-user-circle"></i>
                     </span>
-                    <span class="input-group m-2">
-                      <span class="input-group-text" id="basic-addon1">
-                        <i class="fas fa-key"></i>
-                      </span>
-                      <input type="password" name="user_02" class="form-control" placeholder="Password"
-                        aria-label="Input group example" aria-describedby="basic-addon1">
+                    <input type="text" name="user_01" class="form-control" placeholder="User Name"
+                      aria-label="Input group example" aria-describedby="basic-addon1">
+
+                  </span>
+                  <span class="input-group m-2">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-key"></i>
                     </span>
-                    <div class="btn_login">
-                      <button type="submit" class="btn btn-dark btn-sm"
-                        style="width:80px; height:35px; font-size:18px;">Login</button>
-                    </div>
+                    <input type="password" name="user_02" class="form-control" placeholder="Password"
+                      aria-label="Input group example" aria-describedby="basic-addon1">
+                  </span>
+                  <div class="btn_login">
+                    <button type="submit" class="btn btn-dark btn-sm"
+                      style="width:80px; height:35px; font-size:18px;">Login</button>
                   </div>
                 </div>
+              </div>
               </form>
-            <?php } ?>
-          </span>
+            </span>
+          </div>
+          <!-- <div ><img src="To be world class-4.png" alt="" id="tobe"></div> -->
         </div>
-        <!-- <div ><img src="To be world class-4.png" alt="" id="tobe"></div> -->
-      </div>
+      <?php } ?>
     </span>
   </div>
   <div class="blur-overlay"></div>
@@ -168,8 +176,8 @@ session_start();
     </aside>
     <main class="col-9 col-xl-10 bg-gray-100  full-height-overflow" style="overflow: hidden;">
       <div class="container" id="home">
-        <div class="head  mt-3">
-          <div class="logo fs-2"><img src="img/logoheader.png" style="width: 360px; height: 60px;" alt=""></div>
+        <div class="head  mt-0">
+          <div class="logo fs-2 mt-4 mb-2"><img src="img/head welcome.png" style="width: 360px; height: 60px;" alt=""></div>
         </div>
         <div class="row gap-3 p-1 mb-1 align-items-center">
           <div class="card p-2" style="width: 25rem;">
@@ -189,8 +197,6 @@ session_start();
             <img src="img/U3A.jpg" class="card-img-top office" alt="...">
             <div class="card-body">
               <h5 class="card-title">Head Office U3</h5>
-              <iframe src="./filepdf-test.pdf" width="100%" height="600px"></iframe>
-              <embed src="./filepdf-test.pdf" type="application/pdf" width="100%" height="600px">
               54/10 Moo 7 Soi Thammasiri, Bangna-Trad Rd.,Km.25.5, Bangsaotong,
               Bangsaotong, Samutprakarn 10570 Thailand
               <br>Tel: 02-338-1340, 02-708-3170 </br>
@@ -218,7 +224,7 @@ session_start();
       </div>
 
       <!-- test iframe -->
-      <iframe id="frame" style="display: none;" name="contents" width="100%" height="570" src=""></iframe>
+      <iframe class="pt-3" id="frame" style="display: none;" name="contents" width="100%" height="570" src=""></iframe>
     </main>
   </section>
 
@@ -354,19 +360,15 @@ session_start();
 // $d = 0;
 // while ($row = mysql_fetch_array($result)) {
 //   //echo "$row[0]<br>";
-//   //??????????????????????
 //   $expire_explode = explode("/", $row[12]);
 //   $expire_day[$d] = $expire_explode[0];
 //   $expire_month[$d] = $expire_explode[1];
 //   $expire_year[$d] = $expire_explode[2];
-
-//   //??????????????????
 //   $send_explode = explode("/", $row[15]);
 //   $send_1[$d] = $send_explode[0];
 //   $send_2[$d] = $send_explode[1];
 //   $send_3[$d] = $send_explode[2];
 
-//   //???????????????
 //   $today_explode = explode("/", $Mday);
 //   $today_day[$d] = $today_explode[0];
 //   $today_month[$d] = $today_explode[1];

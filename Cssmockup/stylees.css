@@ -82,10 +82,12 @@ aside li {
     width:100%;
 }
 
+
 input:hover {
     background-color: #db7f65e8;
     cursor: pointer;
 }
+
 
 .btn_login {
     /* width: 10px; */
